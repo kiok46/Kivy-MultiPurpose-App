@@ -1,0 +1,83 @@
+<main_root>:
+	orientation: 'vertical'
+	Status:
+		size_hint:1,.055
+		id: status
+				
+	BoxLayout:
+		BoxLayout:
+			orientation: 'vertical'
+			size_hint: .1,1
+			Button:
+				text: "Calendar"
+				on_release: sm.current = 'calendar'
+			Button:
+				text: "Reminder"
+				on_release: sm.current = 'reminder'
+			Button:
+				text: "To-do"
+				on_release: sm.current = 'to-do'
+			Button:
+				text: "Weather"
+				on_release: sm.current = 'weather'
+			Button:
+				text: "Camera"
+				on_release: sm.current = 'camera'
+			Button:
+				text: "Game"
+				on_release: sm.current = 'game'
+		
+		ScreenManager:
+			id: sm
+		
+			Screen:
+				name: 'calendar'
+				Calendar:
+		
+			Screen:
+				name: 'reminder'
+				Label:
+					text: "I am a Reminder that kivy is awesome"
+					canvas.before:
+						Color:
+							rgb: .2,.8,.2
+						Rectangle:
+							size: self.size
+				
+			Screen:
+				name: 'to-do'
+				Label:
+					text: "I am to-do"
+					canvas.before:
+						Color:
+							rgb: .3,.2,.7
+						Rectangle:
+							size: self.size
+					
+			Screen:
+				name: 'weather'
+				Label:
+					text: "I am Weather"
+					canvas.before:
+						Color:
+							rgb: .1,.4,.2
+						Rectangle:
+							size: self.size
+			Screen:
+				name: 'camera'
+				Label:
+					text: "I am Camera"
+					canvas.before:
+						Color:
+							rgb: .2,.8,.8
+						Rectangle:
+							size: self.size
+			Screen:
+				name: 'game'
+				Label:
+					text: "I am A Snake"
+					canvas.before:
+						Color:
+							rgb: .8,.8,.2
+						Rectangle:
+							size: self.size
